@@ -1,0 +1,21 @@
+@startuml
+actor User
+participant "FinanceTrackerAPP" as App
+participant "树形视图" as Treeview
+
+User -> App: 点击"删除账目"
+activate App
+App -> Treeview: 获取选中项
+Treeview --> App: 返回选中索引
+alt 有选中项
+  App -> User: 显示确认对话框
+  User --> App: 确认删除
+  App -> App: 从entries删除数据
+  App -> App: save_data()
+  App -> Treeview: update_treeview()
+  App -> User: 显示成功消息
+else 无选中项
+  App -> User: 显示警告消息
+end
+deactivate App
+@enduml

@@ -1,0 +1,52 @@
+@startuml Expense Tracker Class Diagram
+class FinanceTrackerAPP {
+    + root: tk.Tk
+    + file_path: str
+    + entries: dict
+    + selected_entries: set
+    + exchange_rates: dict
+    + plans: list
+    + entry_type_var: tk.StringVar
+    + amount_var: tk.DoubleVar
+    + budget_var: tk.DoubleVar
+    + category_var: tk.StringVar
+    + currency_var: tk.StringVar
+    + invoice_type_var: tk.StringVar
+    + invoice_desc_var: tk.StringVar
+    + date_entry: DateEntry
+    + treeview: ttk.Treeview
+    + fig: plt.Figure
+    + ax: plt.Axes
+    + canvas: FigureCanvasTkAgg
+    --
+    + __init__(root: tk.Tk)
+    + create_widgets(): void
+    + load_data(): dict
+    + save_data(): void
+    + save_as_data(): void
+    + import_data(): void
+    + record_entry(): void
+    + delete_selected_entries(): void
+    + set_budget(): void
+    + manage_exchange_rates(): void
+    + manage_plans(): void
+    + browse_invoice_file(): void
+    + calculate_totals(entries: dict): tuple
+    + bar_analytics(): void
+    + pie_analytics(): void
+    + update_treeview(): void
+    + clear_entry_fields(): void
+    + get_entrytypes(): list
+    + get_categories(): list
+    + quit_app(): void
+    + show_running_text(text: str): void
+}
+
+' External dependency associations (simplified core relationships)
+FinanceTrackerAPP --> "uses" tk.Tk
+FinanceTrackerAPP --> "uses" ttk.Treeview
+FinanceTrackerAPP --> "uses" DateEntry
+FinanceTrackerAPP --> "uses" FigureCanvasTkAgg
+FinanceTrackerAPP --> "data storage" json
+FinanceTrackerAPP --> "file operations" os
+@enduml

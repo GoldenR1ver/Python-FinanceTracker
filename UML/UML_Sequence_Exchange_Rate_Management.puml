@@ -1,0 +1,19 @@
+@startuml
+actor User
+participant "FinanceTrackerAPP" as App
+participant "数据存储" as Storage
+
+User -> App: 点击"添加记账"
+activate App
+App -> App: record_entry()
+App -> App: 验证输入
+alt 输入有效
+  App -> App: 创建条目字典
+  App -> Storage: save_data()
+  App -> App: update_treeview()
+  App -> User: 显示成功消息
+else 输入无效
+  App -> User: 显示错误消息
+end
+deactivate App
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+actor User
+
+usecase "记录账目" as UC1
+usecase "删除账目" as UC2
+usecase "设置预算" as UC3
+usecase "查看条形图" as UC4
+usecase "查看饼状图" as UC5
+usecase "管理汇率" as UC6
+usecase "管理资金计划" as UC7
+usecase "导入账本" as UC8
+usecase "另存为" as UC9
+usecase "保存账本" as UC10
+usecase "保存并退出" as UC11
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC8
+User --> UC9
+User --> UC10
+User --> UC11
+@enduml

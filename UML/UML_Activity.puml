@@ -1,0 +1,13 @@
+@startuml
+start
+:用户输入账目信息;
+if (输入有效?) then (是)
+  :创建账目条目;
+  :保存数据到JSON;
+  :更新树形视图;
+  :显示成功消息;
+else (否)
+  :显示错误消息;
+endif
+stop
+@enduml

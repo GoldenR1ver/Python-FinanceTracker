@@ -1,0 +1,50 @@
+{
+  "entries": [
+    {
+      "type": "income",
+      "amount": 750.0,
+      "currency": "USD",
+      "category": "Gift",
+      "date": "2025-11-10",
+      "invoice": null
+    },
+    {
+      "type": "income",
+      "amount": 16000.0,
+      "currency": "CNY",
+      "category": "Education",
+      "date": "2025-11-10",
+      "invoice": {
+        "type": "paper",
+        "info": "转入学费"
+      }
+    },
+    {
+      "type": "expense",
+      "amount": 15600.0,
+      "currency": "CNY",
+      "category": "Education",
+      "date": "2025-11-10",
+      "invoice": {
+        "type": "electronic",
+        "info": "D:/LEARNING_RESOURCE/Software Engineering/Projects/Lab01/My-Finance-Tracker/Elepaper.txt"
+      }
+    }
+  ],
+  "budget": 1000.0,
+  "exchange_rates": {
+    "USD": 7.0,
+    "EUR": 8.0,
+    "HKD": 0.9,
+    "CNY": 1.0
+  },
+  "plans": [
+    {
+      "plan_type": "monthly",
+      "start_date": "2025-11-10",
+      "end_date": "2025-11-10",
+      "spending_limit": 500.0,
+      "saving_goal": 500.0
+    }
+  ]
+}

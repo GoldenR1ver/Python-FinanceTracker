@@ -1,0 +1,25 @@
+@startuml
+component "主应用" as App {
+  component "FinanceTrackerAPP类" as Core
+}
+
+component "GUI组件" as GUI {
+  component "Tkinter窗口" as Window
+  component "树形视图" as Tree
+  component "图表画布" as Canvas
+}
+
+component "数据存储" as Storage {
+  component "JSON处理" as JSON
+}
+
+component "分析引擎" as Analytics {
+  component "Matplotlib" as Plot
+}
+
+App --> GUI : 依赖
+App --> Storage : 读写数据
+App --> Analytics : 生成图表
+Storage --> JSON : 使用
+Analytics --> Plot : 调用
+@enduml
